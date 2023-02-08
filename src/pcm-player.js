@@ -177,7 +177,7 @@ class PCMPlayer {
     const self = this
     if (typeof self.option.onstatechange === 'function') {
       this.audioCtx.onstatechange = function (event) {
-        self.option.onstatechange(this, event, self.audioCtx.state)
+        self.audioCtx && self.option.onstatechange(this, event, self.audioCtx.state)
       }
     }
   }
